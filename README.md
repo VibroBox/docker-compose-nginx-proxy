@@ -123,6 +123,12 @@ To generate self-signed certificates for local development, it is convenient to 
 on the path `certs/domain.key`, and the file `domain.cert` as `certs/domain.crt`
 (without `e` in the extension).
 
+## ATTENTION!
+Bug on letsencrypt-nginx-proxy-companion. After some time you can see in logs ```docker-compose logs -f --tail 30 letsencrypt-nginx-proxy-companion``` error messages like `can't find nginx-proxy container ID!` or error message contains `nginx-proxy` string. In this case to fix problem follow next steps:
+1. stop letsencrypt-nginx-proxy-companion container ```docker-compose stop <container-name>```
+2. remove contaner ```docker-compose rm -fv <container-name>```
+3. start container using ```docker-compose up -d```
+
 ## Basic Authentication
 
 * [nginx-proxy guide (Basic Authentication)](https://github.com/jwilder/nginx-proxy#basic-authentication-support).
