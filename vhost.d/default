@@ -1,0 +1,4 @@
+client_max_body_size 150M;
+# new keepalive_timeout setting
+keepalive_timeout  300;
+fastcgi_read_timeout 300;
